@@ -12,7 +12,24 @@
 
 # Body
 def most_frequent(s):
-    ...
+    import operator
+    letter_count = count_freq(s)
+    print(letter_count)
+    sorted_lst = sorted(sorted(letter_count.items()), key=operator.itemgetter(1))
+    for character, counts in sorted_lst:
+        print(character)
+
+
+def count_freq (s):
+    count_dict = {}
+    for c in s.lower():
+        count = count_dict.get(c, 0) + 1
+    return count_dict
+
+
+    
+
+
 
 
 ###############################################################################
